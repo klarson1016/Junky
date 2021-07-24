@@ -6,5 +6,6 @@ export {
   router
 }
 
-router.post('/', postsCtrl.create)
+
 router.get('/new', postsCtrl.new)
+router.post('/', postsCtrl.create)
