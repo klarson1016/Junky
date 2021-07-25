@@ -6,6 +6,7 @@ export {
 }
 
 function create(req, res) {
+  req.body.author = req.user.profile._id
   const post = new Post(req.body)
   post.save(function(err) {
     if (err) return res.redirect('/posts/new')

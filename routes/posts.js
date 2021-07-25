@@ -7,5 +7,10 @@ export {
 }
 
 
-router.get('/new', postsCtrl.new)
-router.post('/', postsCtrl.create)
+router.get('/new', isLoggedIn, postsCtrl.new)
+router.post('/', isLoggedIn, postsCtrl.create)
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) return next();
+  res.redirect("/auth/google");
+}
