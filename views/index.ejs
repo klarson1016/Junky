@@ -19,38 +19,20 @@
     <h1 class="py-4"><%= title %></h1>
     <h2 class="mb-3">All Items for Sale</h2>
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g5 px-4">
-        <% posts.forEach(post => { %>
-        <div class="col">
-          <a class="text-decoration-none" href="/posts/show/ <%= post.title %>">
-            <div><%= post.title %></div>
-            <div class="card bg-dark shadow-sm mb-3">
-              <% if (post.image) { %>
-              <img
-                class="card-img-top"
-                src="<%= post.image %>"
-                alt="<%= post.title %>'s image"
-                width="100%"
-              />
-              <% } else {%>
-              <img
-                class="card-img-top"
-                src="/images/icons/user.png"
-                alt="<%= post.price %>"
-                width="100%"
-              />
-              <% } %>
-              <div class="card-body"
-                    src="<%= post.price %>">
-                <p class="card-title fs-4 text-light">
-                </p>
-              </div>
-            </div>
-          </a>
+      <% posts.forEach(post => { %>
+        
+          <img src="#" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= post.title %></h5>
+            <p class="card-text">$<%= post.price %></p>
+            <p class="card-text"><small class="text-bold">Listed By: <%= post.author.name %></small></p>
+            <p class="card-text"><small class="text-bold"><%= post.date %> </small></p>
+          </div>
         </div>
         <a href="/posts/show/<%= post._id %>">
           <button type="button" class="btn btn-primary">Details</button>
         </a>
-        <% }) %>
+      <% }) %>
          
       
 </body>
