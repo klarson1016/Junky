@@ -12,8 +12,42 @@
     </div>
   <% } %>
 </main>
-<a href="/posts/new" <button type="button" class="btn btn-primary"></button>Create Post
+<a href="/posts/new" <button type="button" class="btn btn-primary"></button>Create Post</a>
+<a href="/posts/show" <button type="button" class="btn btn-danger"></button>View Post</a>
 
-</a>
-
+<body>
+    <div class="container">
+    <h1 class="py-4"><%= title %></h1>
+    <h2 class="mb-3">All Posts</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g5 px-4">
+      <% posts.forEach(post => { %>
+      <div class="col">
+        <a class="text-decoration-none" href="/posts/show/ <%= post.title %>">
+          <div>Post Title: <%= post.title %></div>
+          <div class="card bg-dark shadow-sm mb-3">
+            <% if (post.image) { %>
+            <img
+              class="card-img-top"
+              src="<%= post.image %>"
+              alt="<%= post.title %>'s image"
+              width="100%"
+            />
+            <% } else {%>
+            <img
+              class="card-img-top"
+              src="/images/icons/user.png"
+              alt="<%= post.title %>"
+              width="100%"
+            />
+            <% } %>
+            <div class="card-body">
+              <p class="card-title fs-4 text-light">
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <% }) %>
+    
+</body>
 <%- include('./partials/footer') %>

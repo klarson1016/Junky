@@ -2,7 +2,16 @@ import { Post } from '../models/post.js'
 
 export {
   newPost as new,
-  create
+  create,
+  show
+}
+
+function show(req, res) {
+  Post.findById({})
+  .then(()=> {
+    res.render("posts/show")
+  })
+
 }
 
 function create(req, res) {
