@@ -13,7 +13,8 @@ const postSchema = new Schema({
     ref: "Profile"
   }],
   description: String,
-  price: Number
+  price: Number,
+  created: Date
 })
 
 const Post = mongoose.model('Post', postSchema)

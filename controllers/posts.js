@@ -7,9 +7,12 @@ export {
 }
 
 function show(req, res) {
-  Post.findById({})
-  .then(()=> {
-    res.render("posts/show")
+  Post.findById(req.params.id)
+  .then( post => {
+    res.render('posts/show', {
+      post: post,
+      title: 'Details Page'
+    })
   })
 
 }

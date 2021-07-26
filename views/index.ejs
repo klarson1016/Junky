@@ -12,8 +12,7 @@
     </div>
   <% } %>
 </main>
-<a href="/posts/new" <button type="button" class="btn btn-primary"></button>Create Post</a>
-<a href="/posts/show" <button type="button" class="btn btn-danger"></button>View Post</a>
+<a href="/posts/new" <button type="button" class="btn btn-primary">Create Post</button></a>
 
 <body>
     <div class="container">
@@ -47,7 +46,10 @@
           </div>
         </a>
       </div>
+      <a href="/posts/show/ <%= post.title %>">
+        <button type="button" class="btn btn-primary">Details</button>
+      </a>
       <% }) %>
-    
+      
 </body>
 <%- include('./partials/footer') %>

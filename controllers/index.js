@@ -6,7 +6,6 @@ export {
 }
 
 function index(req, res) {
-  console.log('inside index ctrl')
   Post.find({})
   .sort({_id: -1})
   .populate('author')
