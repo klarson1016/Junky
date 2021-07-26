@@ -6,7 +6,7 @@ export {
   router
 }
 
-router.get('/show/:title', isLoggedIn, postsCtrl.show)
+router.get('/show/:id', isLoggedIn, postsCtrl.show)
 router.get('/new', isLoggedIn, postsCtrl.new)
 router.post('/', isLoggedIn, postsCtrl.create)
 

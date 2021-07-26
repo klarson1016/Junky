@@ -39,14 +39,15 @@
               width="100%"
             />
             <% } %>
-            <div class="card-body">
+            <div class="card-body"
+                  src="<%= post.price %>">
               <p class="card-title fs-4 text-light">
               </p>
             </div>
           </div>
         </a>
       </div>
-      <a href="/posts/show/ <%= post.title %>">
+      <a href="/posts/show/<%= post._id %>">
         <button type="button" class="btn btn-primary">Details</button>
       </a>
       <% }) %>
