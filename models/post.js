@@ -8,10 +8,10 @@ export {
 
 const postSchema = new Schema({
   title: String,
-  author: [{
+  author: {
     type: Schema.Types.ObjectId,
     ref: "Profile"
-  }],
+  },
   description: String,
   price: Number,
   created: Date

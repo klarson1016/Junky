@@ -12,7 +12,7 @@ function index(req, res) {
   .then( posts => {
     res.render('index', {
       posts: posts,
-      title: 'Home Page'
+      title: 'Welcome to Junky!'
     })
   })
   

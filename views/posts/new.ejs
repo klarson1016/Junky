@@ -24,7 +24,17 @@
     </div>
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Price</label>
-      <input name="price" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Please enter full dollar amounts">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupPrepend">$</span>
+        </div>
+          <input name="price" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Please enter full dollar amounts">
+      </div>
+     
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Date</label>
+      <input name="Date" type="Date" class="form-control" id="exampleFormControlInput1" >
     </div>
     <button type="submit" class="btn btn-primary">Primary</button>
   </form>
