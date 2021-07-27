@@ -22,6 +22,9 @@
         <form  action="/posts/show/<%= post._id %>?_method=DELETE" method="POST">
           <button type="submit" class="btn btn-danger">Delete Post</button>
         </form>
+        <a href="/posts/<%= post._id %>/edit">
+          <button type="submit" class="btn btn-primary">Edit</button>
+        </a>
     </div>
   </div>
 </body>

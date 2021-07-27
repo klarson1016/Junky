@@ -7,7 +7,6 @@ export {
 
 const router = Router()
 router.get('/', indexCtrl.index)
-//router.post('/', indexCtrl.index)
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();
   res.redirect("/auth/google");
