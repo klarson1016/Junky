@@ -12,7 +12,6 @@ function deletePost (req, res) {
 Post.findByIdAndDelete(req.params.id)
   .then(() => {
     res.redirect('/')
-    
   })
 }
 
