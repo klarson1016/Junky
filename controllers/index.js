@@ -3,7 +3,10 @@ import { Post } from "../models/post.js"
 
 export {
   index,
+
 }
+
+
 
 function index(req, res) {
   Post.find({})

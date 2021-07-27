@@ -1,4 +1,5 @@
 import { Post } from '../models/post.js'
+import { index } from './index.js'
 
 export {
   newPost as new,
@@ -9,11 +10,17 @@ export {
 
 function deletePost (req, res) {
 Post.findByIdAndDelete(req.params.id)
-  .then( post => {
-    res.render('index')
-    post
+  .then(() => {
+    res.redirect('/')
+    
   })
 }
+
+// function deletePost(req, res) {
+//   Post.findByIdAndDelete(req.params.id, function(err, post) {
+//     res.redirect('/index')
+//   })
+// }
 
 function show(req, res) {
   Post.findById(req.params.id)
@@ -26,6 +33,7 @@ function show(req, res) {
   })
 
 }
+//60ff19e06ed22c98c4fd303a
 
 function create(req, res) {
   req.body.author = req.user.profile._id
