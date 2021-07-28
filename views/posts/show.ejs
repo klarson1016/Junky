@@ -5,19 +5,21 @@
 <body>
   <h1><%= post.title %> </h1>
   <div class="card">
-    <img src="#" class="card-img-top" alt="...">
+    <img src="<%= user.profile.avatar %>" class="rounded mx-auto d-block" alt="...">
     <div class="card-body">
       <h3 class="card-title"><%= post.title %></h3>
       <p class="card-text">$<%= post.price %></p>
       <p class="card-text"><%= post.description %> </p>
       <p class="card-text"><small class="text-muted">Listed By: <%= post.author.name %></small></p>
       <p class="card-text"><small class="text-muted"><%= post.date %> </small></p>
+      <% if (user.profile._id.equals(post.author._id)) { %>
         <form  action="/posts/show/<%= post._id %>?_method=DELETE" method="POST">
           <button type="submit" class="btn btn-danger">Delete Post</button>
         </form>
         <a href="/posts/<%= post._id %>/edit">
           <button type="submit" class="btn btn-primary">Edit</button>
         </a>
+        <% } %> 
     </div>
   </div>
 </body>
