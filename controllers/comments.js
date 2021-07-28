@@ -12,7 +12,7 @@ function create(req, res) {
   req.body.author = req.user.profile._id
   Comment.create(req.body)
   .then(()=> {
-    res.redirect('/posts')
+    res.redirect('/')
   })
 }
 
@@ -21,8 +21,7 @@ function index(req, res) {
   .populate('author')
   .sort({ createdAt: "desc" })
   .then(comments => {
-    res.render('messages/index', {
-      
+    res.render('/', {
       comments
     })
   })
