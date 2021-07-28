@@ -9,7 +9,6 @@ export {
 
 
 function create(req, res) {
-  // Add currently logged in user's profile id to req.body
   req.body.author = req.user.profile._id
   Comment.create(req.body)
   .then(()=> {
@@ -23,7 +22,7 @@ function index(req, res) {
   .sort({ createdAt: "desc" })
   .then(comments => {
     res.render('messages/index', {
-      title: "Message Board",
+      
       comments
     })
   })
