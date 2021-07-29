@@ -23,8 +23,6 @@
       <h2 class="mb-3">All Items for Sale</h2>
       <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g5 px-4">
         <% posts.forEach(post => { %>
-          
-            <img src="#" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title"><%= post.title %></h5>
               <p class="card-text">$<%= post.price %></p>
@@ -58,13 +56,9 @@
                   </div>
                 </div>
               </div>
-
           </form>
-
           </div>
-        <% }) %>
-           
-        
+        <% }) %>      
   </body>
   </div>
   

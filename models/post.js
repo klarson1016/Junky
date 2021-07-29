@@ -14,7 +14,11 @@ const postSchema = new Schema({
   },
   description: String,
   price: Number,
-  created: Date
+  created: Date,
+  comments: [{
+    type: Schema.Types.ObjectId,
+    ref: "Comment"
+  }]
 })
 
 const Post = mongoose.model('Post', postSchema)

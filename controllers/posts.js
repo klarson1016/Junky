@@ -1,4 +1,5 @@
 import { Post } from '../models/post.js'
+import { Comment } from '../models/comment.js'
 import { index } from './index.js'
 
 export {
@@ -7,13 +8,43 @@ export {
   show,
   deletePost as delete,
   update,
-  edit
+  edit,
+  addComment
+}
+
+
+// function addComment(req, res) {
+//   req.body.author = req.user.profile._id
+//   Comment.findById(req.params._id)
+//   .then(comment => {
+//     post.comment.push(req.body)
+//     message.save()
+//     .then(() => {
+//       res.redirect(`/show/${req.params.id}`)
+//     })
+//   })
+// }
+
+function addComment(req, res) {
+  req.body.author = req.user.profile._id
+  Comment.create(req.body)
+  .then((comment)=> {
+    console.log(comment)
+   Post.findById(req.params.id)
+   .then((post) => {
+     post.comments.push(comment._id)
+     console.log(post)
+     post.save()
+     .then((post) => {
+      console.log(post)
+       res.redirect('back')
+     })
+   })
+  })
 }
 
 function update(req, res) {
   req.body.nowShowing = !!req.body.nowShowing
-  // Remove key/value pairs that are empty strings
-  // for schema defaults to work properly
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key]
   }
@@ -42,7 +73,9 @@ Post.findByIdAndDelete(req.params.id)
 function show(req, res) {
   Post.findById(req.params.id)
   .populate('author')
+  .populate('comments')
   .then( post => {
+    console.log(post)
     res.render('posts/show', {
       post: post,
       title: 'Details Page'
@@ -50,6 +83,7 @@ function show(req, res) {
   })
 
 }
+
 
 function create(req, res) {
   req.body.author = req.user.profile._id

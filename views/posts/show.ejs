@@ -20,6 +20,27 @@
           <button type="submit" class="btn btn-primary">Edit</button>
         </a>
         <% } %> 
+        <br> 
+        
+        <form action="/posts/show/<%= post._id %>/comment" method="POST">
+          <h4>Add a New Comment</h2>
+          <label for="comment">comment content: </label>
+          <input type="text" name="content">
+          <br>
+          <button type="submit">Save!</button>
+        </form>
+        
+          <div class="card">
+            <div class="card-header">
+             
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-dander">Delete Comment</a>
+            </div>
+          </div>
+          
     </div>
   </div>
 </body>
