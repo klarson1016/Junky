@@ -8,7 +8,7 @@ export {
 const router = Router()
 
 // router.get('/', isLoggedIn, messagesCtrl.index)
-router.post('/', isLoggedIn, commentsCtrl.create)
+//router.post('/', isLoggedIn, commentsCtrl.create)
 // router.get('/:id', isLoggedIn, messagesCtrl.show)
 // router.post('/:id', isLoggedIn, messagesCtrl.reply)
 

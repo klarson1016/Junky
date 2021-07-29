@@ -9,21 +9,16 @@ export {
   deletePost as delete,
   update,
   edit,
-  addComment
+  addComment,
+  deleteComment
 }
 
-
-// function addComment(req, res) {
-//   req.body.author = req.user.profile._id
-//   Comment.findById(req.params._id)
-//   .then(comment => {
-//     post.comment.push(req.body)
-//     message.save()
-//     .then(() => {
-//       res.redirect(`/show/${req.params.id}`)
-//     })
-//   })
-// }
+function deleteComment (req, res) {
+  Comment.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.redirect('back')
+    })
+  }
 
 function addComment(req, res) {
   req.body.author = req.user.profile._id
@@ -73,7 +68,14 @@ Post.findByIdAndDelete(req.params.id)
 function show(req, res) {
   Post.findById(req.params.id)
   .populate('author')
-  .populate('comments')
+  .populate({
+    path:'comments',
+    model:'Comment',
+    populate:{
+      path:'author',
+      model:'Profile'
+    }
+  })
   .then( post => {
     console.log(post)
     res.render('posts/show', {
@@ -83,7 +85,6 @@ function show(req, res) {
   })
 
 }
-
 
 function create(req, res) {
   req.body.author = req.user.profile._id
