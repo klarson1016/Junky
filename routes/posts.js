@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import * as postsCtrl from '../controllers/posts.js'
 import * as indexCtrl from '../controllers/index.js'
-import * as commentCtrl from '../controllers/comments.js'
+
 
 const router = Router()
 
