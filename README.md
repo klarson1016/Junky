@@ -1,72 +1,33 @@
-# MEN Stack with OAuth Template
+Junky
+Instructions
+As a user you are able to see all the post listed by other users that have signed in using google to create their own post. To create post or comment on your post or another users you must login to create a profile that will be your google login information. Once logged in you are able to read, create, edit, and delete your post and leave comments on another users post.  
+Try it out here! (https://junky-sei.herokuapp.com/)
+Why I chose Junky. I choose to make this app as a starting point to create a user friendly app to post items for sale that you no longer want. After moving so many times I constantly had thingsI did not wnat to take with me, so I thought I would build an app that can post my unwanted Junk (hence the name of the app).
 
-This is a MEN Stack template that includes OAuth.
+PseudoCode
+1. Define required Models:
+  Have a model for post and comments that refer to the users profile ID to create ownership both the comments and post.
+2. Define routes 
+  Create routes to...
+3. Controllers
+  Create controllers that the routes define, to maipulate the stored data that the users create.
+4. Views
+  Display the data and allow the user to interact with the data that they defined when creating post or commenting on a post
+  
+Screenshots:
+Black Jack
 
-Use this to go build things! 🚀
+Before deal button clicked.
 
-## To Use This Template
+Black Jack
 
-__Replace `<name-of-your-app-here>` in the commands below with the name of your app!__
+Game Over player bust.
 
-```bash
-git clone https://github.com/SEI-Remote/men-stack-oauth-template.git <name-of-your-app-here>
-cd <name-of-your-app-here>
-```
+Technologies Used:
+Javascript, HTML, CSS,
+nodeJS, mongoDB, Bootstrap
 
-Once you are in the project directory:
-
-```bash
-rm -rf .git
-```
-
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
-
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
-
-Re-initialize a git repository:
-
-```bash
-git init
-```
-
-Use the GitHub CLI to create a new project repository on GitHub:
-
-```bash
-gh repo create <name-of-your-app-here>
-```
-
-Run npm i to fetch the template's dependencies:
-
-```bash
-npm i
-```
-
-Then, make an initial commit:
-
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
-
-touch a .env file:
-
-```bash
-touch .env
-```
-
-Fill it with the following:
-
-```
-DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_CALLBACK=https://localhost:3000/auth/google/oauth2callback
-GOOGLE_CLIENT_ID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SESSION_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-Replace the `DATABASE_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_SECRET`, and `SESSION_SECRET` with values that you provide.
-
-Delete this README.md
-
-You're done!
+Things To Add In The Future:
+Allow users to upload pictures to there post
+Add a secure payment feature 
+Add direct messege feature to allow users to send messeges to each other

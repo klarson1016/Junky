@@ -10,8 +10,7 @@
       <h3 class="card-title"><%= post.title %></h3>
       <p class="card-text">$<%= post.price %></p>
       <p class="card-text"><%= post.description %> </p>
-      <p class="card-text"><small class="text-muted">Listed By: <%= post.author.name %></small></p>
-      <p class="card-text"><small class="text-muted"><%= post.date %> </small></p>
+      <p class="card-text"><small class="text-muted">Created By: <%= post.author.name %></small></p>
       <% if (user.profile._id.equals(post.author._id)) { %>
         <form  action="/posts/show/<%= post._id %>?_method=DELETE" method="POST">
           <button type="submit" class="btn btn-danger">Delete Post</button>
@@ -27,7 +26,7 @@
           <label for="comment">comment content: </label>
           <input type="text" name="content">
           <br>
-          <button type="submit">Save!</button>
+          <button type="submit" class="btn btn-success">submit</button>
         </form>
           <% post.comments.forEach(comment => { %>
             <div class="card">
