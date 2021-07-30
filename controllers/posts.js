@@ -24,14 +24,11 @@ function addComment(req, res) {
   req.body.author = req.user.profile._id
   Comment.create(req.body)
   .then((comment)=> {
-    console.log(comment)
    Post.findById(req.params.id)
    .then((post) => {
      post.comments.push(comment._id)
-     console.log(post)
      post.save()
      .then((post) => {
-      console.log(post)
        res.redirect('back')
      })
    })
@@ -39,7 +36,6 @@ function addComment(req, res) {
 }
 
 function update(req, res) {
-  req.body.nowShowing = !!req.body.nowShowing
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key]
   }
@@ -77,7 +73,6 @@ function show(req, res) {
     }
   })
   .then( post => {
-    console.log(post)
     res.render('posts/show', {
       post: post,
       title: 'Details Page'
