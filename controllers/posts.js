@@ -78,7 +78,6 @@ function show(req, res) {
       title: 'Details Page'
     })
   })
-
 }
 
 function create(req, res) {

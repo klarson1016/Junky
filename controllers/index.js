@@ -5,8 +5,6 @@ export {
 
 }
 
-
-
 function index(req, res) {
   Post.find({})
   .sort({_id: -1})

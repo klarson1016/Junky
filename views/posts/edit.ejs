@@ -12,7 +12,6 @@
 <body>
   <h1>Edit Post</h1>
   <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
-  
     <div class="mb-3">
       <label for="Title for post" class="form-label">Title</label>
       <input name= "title" type="text" class="form-control" id="exampleFormControlInput1" value=<%=post.title%>>
@@ -29,12 +28,10 @@
         </div>
           <input name="price" type="number" class="form-control" id="exampleFormControlInput1" value=<%=post.price%>>
       </div>
-     
     </div>
     <a href="/posts/<%= post._id %>"> 
       <button type="submit" class="btn btn-primary">Save</button>
-    </a>
-    
+    </a> 
   </form>
 </body>
 </html>

@@ -14,7 +14,6 @@ const postSchema = new Schema({
   },
   description: String,
   price: Number,
-  created: Date,
   comments: [{
     type: Schema.Types.ObjectId,
     ref: "Comment"
